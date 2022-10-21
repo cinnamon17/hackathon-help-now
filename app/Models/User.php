@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function participa(){
+
+        return $this->hasMany(Participa::class);
+    }
 }

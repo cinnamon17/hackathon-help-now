@@ -13,9 +13,16 @@ class HomeControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_home_guest()
     {
         $response = $this->get('/');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_list_all_data()
+    {
+        $response = $this->get('/', ['']);
 
         $response->assertStatus(200);
     }
