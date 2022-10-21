@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Participant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class MessageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'text' => fake()->text,
+            'participant_id' => Participant::factory()
         ];
     }
 }

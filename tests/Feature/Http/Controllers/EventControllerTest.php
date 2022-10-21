@@ -8,15 +8,13 @@ use Tests\TestCase;
 
 class EventControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    use RefreshDatabase;
+
+    public function test_route_event_exists()
     {
         $response = $this->get('/');
 
         $response->assertStatus(200);
+
     }
 }
