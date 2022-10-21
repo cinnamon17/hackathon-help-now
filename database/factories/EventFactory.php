@@ -18,6 +18,14 @@ class EventFactory extends Factory
     {
         return [
 
+            'title' => fake()->sentence,
+            'descripcion' => fake()->sentence,
+            'localizacion' => fake()->address,
+            'verified' => false,
+            'organizador' => 'ONG',
+            'personas_inscritas' => fake()->numberBetween(10,16),
+            'img' => fake()->imageUrl()
+
         ];
     }
 }
