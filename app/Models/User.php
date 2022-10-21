@@ -42,8 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function participa(){
+    function participants(){
 
-        return $this->hasMany(Participa::class);
+        return $this->hasMany(Participant::class);
     }
 }

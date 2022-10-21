@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
+use App\Models\Participant;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class EventController extends Controller
+class ParticipantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        
-        $events = DB::table('events')->get();
-
-        return view('index', ['event' => $events]);
-
+        //
     }
 
     /**
@@ -46,10 +41,10 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Event  $event
+     * @param  \App\Models\Participant  $participant
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(Participant $participant)
     {
         //
     }
@@ -57,10 +52,10 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Event  $event
+     * @param  \App\Models\Participant  $participant
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit(Participant $participant)
     {
         //
     }
@@ -69,10 +64,10 @@ class EventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
+     * @param  \App\Models\Participant  $participant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, Participant $participant)
     {
         //
     }
@@ -80,10 +75,10 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Event  $event
+     * @param  \App\Models\Participant  $participant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy(Participant $participant)
     {
         //
     }
