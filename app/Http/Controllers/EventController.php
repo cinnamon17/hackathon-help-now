@@ -28,7 +28,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+       return view('events.create');
     }
 
     /**
@@ -39,7 +39,18 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            
+            'title' => 'required',
+            'descripcion' => 'required',
+        ]);
+     
+
+        $event = $request->user()->participants()->events($request->all());
+
+        dd($event);
+        return redirect()->route('/');
     }
 
     /**
@@ -48,9 +59,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(Request $request, Event $event)
     {
-        //
+       $eventElement = DB::table('events')->where("id", "=", "$request");
+
+       return view('dashboard', ['eventElement' => $$request]);
     }
 
     /**
@@ -61,7 +74,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+       return view('events.edit');
     }
 
     /**
@@ -73,7 +86,15 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        if($request->user()->id != $event->user_id){
+  
+               abort(403);
+           }
+  
+           $event->update($request->all());
+  
+           return redirect()->route("question.index");
+
     }
 
     /**
@@ -82,8 +103,17 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy(Request $request, Event $event)
     {
-        //
+
+         if($request->user()->id != $event->user_id){
+  
+               abort(403);
+           }
+  
+           $response = $event->delete();
+  
+             return redirect()->route('question.index');
+        
     }
 }
