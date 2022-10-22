@@ -1,10 +1,3 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
 <ul class="cards">
 
 <style>
@@ -129,16 +122,11 @@ body {
   overflow: hidden;
 }    
 </style>
-    @php
-
-    $events = DB::table('events')->get();
-
-    @endphp
 
 @foreach ($events as $event)
   <li>
     <a href="" class="card">
-      <img src="https://images.pexels.com/photos/3480494/pexels-photo-3480494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card__image" alt="" />
+      <img src="{{ $event->img}}" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
@@ -149,11 +137,8 @@ body {
           </div>
         </div>
         <p class="card__description">{{$event->descripcion}}</p>
-        <p class="card__description"><button style="background-color: #D43031; border-radius: 15%; height: 30px; width: 80px; margin-left: 10px; margin-right: 10px; color: white;">Borrar</button> <button style="background-color: mediumseagreen; border-radius: 15%; height: 30px; width: 80px; margin-left: 10px; margin-right: 10px; color: white;">Aprobar</button></p>
       </div>
     </a>      
   </li>
 @endforeach
 </ul>
-
-</x-app-layout>

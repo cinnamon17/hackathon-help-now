@@ -49,7 +49,6 @@ class EventController extends Controller
 
         $event = $request->user()->participants()->events($request->all());
 
-        dd($event);
         return redirect()->route('/');
     }
 
