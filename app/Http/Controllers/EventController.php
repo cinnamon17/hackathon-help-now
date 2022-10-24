@@ -84,10 +84,10 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        if($request->user()->id != $event->user_id){
+        //if($request->user()->id != $event->user_id){
   
-               abort(403);
-           }
+         //      abort(403);
+         //  }
   
            $event->update($request->all());
   

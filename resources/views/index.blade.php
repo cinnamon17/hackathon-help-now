@@ -229,7 +229,7 @@ body {
 
 @foreach ($events as $event)
   <li>
-    <a href="" class="card">
+    <a href="{{route('event.show', $event)}}" class="card">
       <img src="{{$event->img}}" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">

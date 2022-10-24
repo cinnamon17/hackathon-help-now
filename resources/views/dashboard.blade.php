@@ -129,16 +129,11 @@ body {
   overflow: hidden;
 }    
 </style>
-    @php
-
-    $events = DB::table('events')->get();
-
-    @endphp
 
 @foreach ($events as $event)
   <li>
     <a href="" class="card">
-      <img src="https://images.pexels.com/photos/3480494/pexels-photo-3480494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card__image" alt="" />
+      <img src="{{ $event->img }}" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     

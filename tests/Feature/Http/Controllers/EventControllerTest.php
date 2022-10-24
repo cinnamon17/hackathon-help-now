@@ -56,7 +56,9 @@ class EventControllerTest extends TestCase
 
     public function test_view_edit_exists(){
 
-        $response = $this->view('events.edit');
+        $event = Event::factory()->create();
+
+        $response = $this->view('events.edit', compact('event'));
 
         $response->assertSee('form');
     }

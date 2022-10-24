@@ -1,7 +1,7 @@
 <div>
 
 {{ $event->title }}
-{{ $event->descripcion}}
+{{ $event->descripcion }}
 
 </div>
 <div>
