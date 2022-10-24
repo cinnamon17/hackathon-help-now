@@ -228,82 +228,26 @@ body {
 </style>
 
 @foreach ($events as $event)
+  <li>
+    <a href="" class="card">
+      <img src="{{$event->img}}" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+          <div class="card__header-text">
+            <h3 class="card__title">{{ $event->title }}</h3>            
+            <span class="card__status">1 hour ago</span>
+          </div>
+        </div>
+        <p class="card__description">{{ $event->descripcion }}</p>
+
+        <p class="card__description"><button style="background-color: black; height: 30px; width: 100%; margin-left: 10px; margin-right: 10px;">Inscribirse</button></p>
+      </div>
+    </a>      
+  </li>
+
 @endforeach
-  <li>
-    <a href="" class="card">
-      <img src="https://images.pexels.com/photos/3480494/pexels-photo-3480494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Recogida de basura</h3>            
-            <span class="card__status">1 hour ago</span>
-          </div>
-        </div>
-        <p class="card__description">Toda colaboración sera bienvenida</p>
-
-        <p class="card__description"><button style="background-color: black; height: 30px; width: 100%; margin-left: 10px; margin-right: 10px;">Inscribirse</button></p>
-      </div>
-    </a>      
-  </li>
-
-  <li>
-    <a href="" class="card">
-      <img src="https://images.pexels.com/photos/7341749/pexels-photo-7341749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Recogida de alimentos</h3>            
-            <span class="card__status">1 hour ago</span>
-          </div>
-        </div>
-        <p class="card__description">Toda la cosera se donara por eso requerimos personas para colaborar</p>
-
-        <p class="card__description"><button style="background-color: black; height: 30px; width: 100%; margin-left: 10px; margin-right: 10px;">Inscribirse</button></p>
-      </div>
-    </a>      
-  </li>
-
-  <li>
-    <a href="" class="card">
-      <img src="https://images.pexels.com/photos/7341749/pexels-photo-7341749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Recogida de alimentos</h3>            
-            <span class="card__status">1 hour ago</span>
-          </div>
-        </div>
-        <p class="card__description">Toda la cosera se donara por eso requerimos personas para colaborar</p>
-
-        <p class="card__description"><button style="background-color: black; height: 30px; width: 100%; margin-left: 10px; margin-right: 10px;">Inscribirse</button></p>
-      </div>
-    </a>      
-  </li>
-
-  <li>
-    <a href="" class="card">
-      <img src="https://images.pexels.com/photos/7341749/pexels-photo-7341749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Recogida de alimentos</h3>            
-            <span class="card__status">1 hour ago</span>
-          </div>
-        </div>
-        <p class="card__description">Toda la cosera se donara por eso requerimos personas para colaborar</p>
-
-        <p class="card__description"><button style="background-color: black; height: 30px; width: 100%; margin-left: 10px; margin-right: 10px;">Inscribirse</button></p>
-      </div>
-    </a>      
-  </li>
 </ul>
 
 <x-footer>
