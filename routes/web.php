@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('/', HomeController::class);
+Route::resource('event', EventController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
