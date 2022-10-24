@@ -22,11 +22,13 @@ class EventControllerTest extends TestCase
 
     public function test_view_show_exists(){
 
+
         $event = Event::factory()->create();
 
-        $response = $this->view('events.show',['eventElement' => $event->id]);
+        $response = $this->view('events.show', compact('event'));
 
-        $response->assertSee($event->id);
+        $response->assertSee($event->title);
+        $response->assertSee($event->descripcion);
     }
 
     public function test_event_show_method_give_correct_response(){

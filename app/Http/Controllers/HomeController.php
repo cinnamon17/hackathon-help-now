@@ -16,9 +16,9 @@ class HomeController extends Controller
     public function index()
     {
         
-        $event = Event::all();
+        $events = Event::all();
 
-        return view('index', ['events' => $event]);
+        return view('index', compact('events'));
 
     }
 
@@ -51,7 +51,7 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

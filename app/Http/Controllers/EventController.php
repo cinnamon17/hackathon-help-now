@@ -16,7 +16,7 @@ class EventController extends Controller
     public function index()
     {
 
-        $events = DB::table('events')->get();
+        $events = Event::all();
 
         return view('index', ['events' => $events]);
     }
@@ -58,11 +58,10 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Event $event)
+    public function show(Event $event)
     {
-       $eventElement = DB::table('events')->where("id", "=", "$request");
 
-       return view('dashboard', ['eventElement' => $$request]);
+        return view('events.show', compact('event'));
     }
 
     /**
@@ -73,7 +72,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-       return view('events.edit');
+       return view('events.edit', compact('event'));
     }
 
     /**
@@ -92,7 +91,7 @@ class EventController extends Controller
   
            $event->update($request->all());
   
-           return redirect()->route("question.index");
+           return redirect()->route("index");
 
     }
 
@@ -112,7 +111,7 @@ class EventController extends Controller
   
            $response = $event->delete();
   
-             return redirect()->route('question.index');
+             return redirect()->route('index');
         
     }
 }
